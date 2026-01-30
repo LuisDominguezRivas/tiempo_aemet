@@ -1,13 +1,7 @@
 import requests
 import sys
 
-# ===============================
-# API KEY REAL
-# ===============================
-API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWlzX2Vkcl9lZHJAaG90bWFpbC5lcyIsImp0aSI6IjFmYTY0NDU1LTYxODktNDlmOC1hZDFmLTlhNjI3OGFlNWUyOSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNzY4NDE4NzI5LCJ1c2VySWQiOiIxZmE2NDQ1NS02MTg5LTQ5ZjgtYWQxZi05YTYyNzhhZTVlMjkiLCJyb2xlIjoiIn0.0eSsi-ey1fucVc8GwdpZ-GqmhJzQ24BVkNszwXgPdWQ"
-BASE_URL = "https://opendata.aemet.es/opendata/api"
-
-
+from api import API_KEY, BASE_URL 
 # ===============================
 # FUNCIONES
 # ===============================
