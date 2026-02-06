@@ -75,9 +75,14 @@ def cargar_municipios():
     print("Descargando municipios desde AEMET...") 
     url = f"{BASE_URL}/maestro/municipios?api_key={API_KEY}"
     municipios = llamada_aemet(url)
+    municipios_limpios={}
+
+    #Filtramos para cada municipio guardamos el nombre en minuscula y guardamos el id sin la prefijo id
+    for municipio in municipios:
+        municipios_limpios[municipio["nombre"].lower()]=municipio["id"][2:]
 
     with open(CACHE_MUNICIPIOS, "w", encoding="utf-8") as f:
-        json.dump(municipios, f, ensure_ascii=False, indent=2)
+        json.dump(municipios_limpios, f, ensure_ascii=False, indent=2)
 
     return municipios
 
@@ -90,13 +95,10 @@ def obtener_codigo_municipio(nombre):
     nombre = nombre.lower()
 
     # Lower convierte a minúsculas para no tener problemas en la búsqueda
-    for m in municipios:
-        if m["nombre"].lower() == nombre:
-            # Devolvemos el código SIN 'id'
-            return m["id"][2:]
-
-    return None
-
+    try:
+        return municipios[nombre]
+    except KeyError:
+        return None
 
 def prediccion_horaria(codigo):
     """
