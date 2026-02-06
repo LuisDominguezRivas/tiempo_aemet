@@ -1,2 +1,15 @@
-api.py
+# Python
 __pycache__/
+*.pyc
+
+# Entornos virtuales
+venv/
+.env/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# 🔐 AÑADIDO: no subir la API key
+api.py

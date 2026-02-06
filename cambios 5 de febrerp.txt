@@ -1,3 +1,39 @@
+# api.py
+# ===============================
+# ARCHIVO NUEVO
+# Aquí se guardan constantes compartidas
+# (API key y URL base)
+# ===============================
+
+API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWlzX2Vkcl9lZHJAaG90bWFpbC5lcyIsImp0aSI6IjFmYTY0NDU1LTYxODktNDlmOC1hZDFmLTlhNjI3OGFlNWUyOSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNzY4NDE4NzI5LCJ1c2VySWQiOiIxZmE2NDQ1NS02MTg5LTQ5ZjgtYWQxZi05YTYyNzhhZTVlMjkiLCJyb2xlIjoiIn0.0eSsi-ey1fucVc8GwdpZ-GqmhJzQ24BVkNszwXgPdWQ"
+
+BASE_URL = "https://opendata.aemet.es/opendata/api"
+
+
+
+# Python
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+venv/
+.env/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# 🔐 AÑADIDO: no subir la API key
+api.py
+
+
+
+
+
+
+archivo completo tiempo.py
+
 import requests
 import sys
 
@@ -155,4 +191,5 @@ if not codigo:
 
 print(f"✅ Municipio encontrado. Código: {codigo}")
 prediccion_horaria(codigo)
+
 
